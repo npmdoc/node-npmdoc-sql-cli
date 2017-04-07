@@ -1,0 +1,41 @@
+<svg height="606" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="606" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-07 12:45:21 +0000    84296 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-07 12:45:21 +0000    11323 bytes  LICENSE</tspan>
+<tspan x="10" y="58">  2.  2017-04-07 12:45:21 +0000     2845 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-07 12:45:21 +0000       71 bytes  bin/mssql</tspan>
+<tspan x="10" y="90">  4.  2017-04-07 12:45:21 +0000      147 bytes  bin/mssql.js</tspan>
+<tspan x="10" y="106">  5.  2017-04-07 12:45:21 +0000     1146 bytes  external/exit.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-07 12:45:21 +0000     3754 bytes  lib/cli.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-07 12:45:21 +0000      576 bytes  lib/commands/analyze.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-07 12:45:21 +0000      555 bytes  lib/commands/databases.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-07 12:45:21 +0000     2203 bytes  lib/commands/fileexecutor.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-07 12:45:21 +0000      690 bytes  lib/commands/help.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-07 12:45:21 +0000      889 bytes  lib/commands/index.js</tspan>
+<tspan x="10" y="218"> 12.  2017-04-07 12:45:21 +0000      723 bytes  lib/commands/indexes.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-07 12:45:21 +0000      759 bytes  lib/commands/invoker.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-07 12:45:21 +0000     3181 bytes  lib/commands/queries.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-07 12:45:21 +0000      352 bytes  lib/commands/query.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-07 12:45:21 +0000      416 bytes  lib/commands/quit.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-07 12:45:21 +0000     1529 bytes  lib/commands/read.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-07 12:45:21 +0000     1497 bytes  lib/commands/run.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-07 12:45:21 +0000      718 bytes  lib/commands/schema.js</tspan>
+<tspan x="10" y="346"> 20.  2017-04-07 12:45:21 +0000      537 bytes  lib/commands/tables.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-07 12:45:21 +0000     4076 bytes  lib/commands/utils.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-07 12:45:21 +0000     2089 bytes  lib/messages.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-07 12:45:21 +0000      703 bytes  lib/mssqldb.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-07 12:45:21 +0000     4165 bytes  lib/options.js</tspan>
+<tspan x="10" y="426"> 25.  2017-04-07 12:45:21 +0000     2161 bytes  lib/prompt.js</tspan>
+<tspan x="10" y="442"> 26.  2017-04-07 12:45:21 +0000     2244 bytes  lib/prompt.json</tspan>
+<tspan x="10" y="458"> 27.  2017-04-07 12:45:21 +0000     5479 bytes  lib/resultwriter.js</tspan>
+<tspan x="10" y="474"> 28.  2017-04-07 12:45:21 +0000     3069 bytes  package.json</tspan>
+<tspan x="10" y="490"> 29.  2017-04-07 12:45:21 +0000     5451 bytes  test/cli-spec.js</tspan>
+<tspan x="10" y="506"> 30.  2017-04-07 12:45:21 +0000     5174 bytes  test/commands-spec.js</tspan>
+<tspan x="10" y="522"> 31.  2017-04-07 12:45:21 +0000     3025 bytes  test/mssqldb-spec.js</tspan>
+<tspan x="10" y="538"> 32.  2017-04-07 12:45:21 +0000     5215 bytes  test/options-spec.js</tspan>
+<tspan x="10" y="554"> 33.  2017-04-07 12:45:21 +0000     1357 bytes  test/prompt-spec.js</tspan>
+<tspan x="10" y="570"> 34.  2017-04-07 12:45:21 +0000     5198 bytes  test/resultwriter-spec.js</tspan>
+<tspan x="10" y="586"> 35.  2017-04-07 12:45:21 +0000      979 bytes  test/utils.js</tspan>
+</text>
+</svg>

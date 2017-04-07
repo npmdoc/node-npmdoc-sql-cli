@@ -1,0 +1,473 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/hasankhan/sql-cli">sql-cli (v0.4.14)</a>
+</h1>
+<h4>Cross platform command line interface for SQL Server</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sql-cli">module sql-cli</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sql-cli.resultwriter">
+            function <span class="apidocSignatureSpan">sql-cli.</span>resultwriter
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sql-cli.resultwriter">module sql-cli.resultwriter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sql-cli.resultwriter.resultwriter">
+            function <span class="apidocSignatureSpan">sql-cli.</span>resultwriter
+            <span class="apidocSignatureSpan">(format)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sql-cli.resultwriter.CsvWriter">
+            function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>CsvWriter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sql-cli.resultwriter.JsonWriter">
+            function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>JsonWriter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sql-cli.resultwriter.TableWriter">
+            function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>TableWriter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sql-cli.resultwriter.XmlWriter">
+            function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>XmlWriter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sql-cli" id="apidoc.module.sql-cli">module sql-cli</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sql-cli.resultwriter" id="apidoc.element.sql-cli.resultwriter">
+        function <span class="apidocSignatureSpan">sql-cli.</span>resultwriter
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class ResultWriter {
+    static create(format) {
+        if (!format || format == 't' || format == 'table') {
+            return new TableWriter();
+        }
+        else if (format == 'c' || format == 'csv') {
+            return new CsvWriter();
+        }
+        else if (format == 'x' || format == 'xml') {
+            return new XmlWriter();
+        }
+        else if (format == 'j' || format == 'json') {
+            return new JsonWriter();
+        }
+        else {
+            throw new Error(sprintf("Format '%s' is not supported.", format));
+        }
+    }
+
+    constructor() {
+    }
+
+    startResult() {
+        this.firstSet = true;
+    }
+
+    startSet() {
+    }
+
+    writeRows() {
+    }
+
+    endSet() {
+        this.firstSet = false;
+    }
+
+    endResult() {
+    }
+
+    formatItem(item) {
+        _.each(item, (value, key) =&gt; {
+            if (value instanceof Date) {
+                item[key] = value.toISOString();
+            } else if (value instanceof Buffer) {
+                item[key] = value.toString('hex');
+            }
+        });
+    }
+
+    log(output) {
+        if (output === undefined) {
+            output = '';
+        }
+        console.log(output);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sql-cli.resultwriter" id="apidoc.module.sql-cli.resultwriter">module sql-cli.resultwriter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sql-cli.resultwriter.resultwriter" id="apidoc.element.sql-cli.resultwriter.resultwriter">
+        function <span class="apidocSignatureSpan">sql-cli.</span>resultwriter
+        <span class="apidocSignatureSpan">(format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class ResultWriter {
+    static create(format) {
+        if (!format || format == 't' || format == 'table') {
+            return new TableWriter();
+        }
+        else if (format == 'c' || format == 'csv') {
+            return new CsvWriter();
+        }
+        else if (format == 'x' || format == 'xml') {
+            return new XmlWriter();
+        }
+        else if (format == 'j' || format == 'json') {
+            return new JsonWriter();
+        }
+        else {
+            throw new Error(sprintf("Format '%s' is not supported.", format));
+        }
+    }
+
+    constructor() {
+    }
+
+    startResult() {
+        this.firstSet = true;
+    }
+
+    startSet() {
+    }
+
+    writeRows() {
+    }
+
+    endSet() {
+        this.firstSet = false;
+    }
+
+    endResult() {
+    }
+
+    formatItem(item) {
+        _.each(item, (value, key) =&gt; {
+            if (value instanceof Date) {
+                item[key] = value.toISOString();
+            } else if (value instanceof Buffer) {
+                item[key] = value.toString('hex');
+            }
+        });
+    }
+
+    log(output) {
+        if (output === undefined) {
+            output = '';
+        }
+        console.log(output);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sql-cli.resultwriter.CsvWriter" id="apidoc.element.sql-cli.resultwriter.CsvWriter">
+        function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>CsvWriter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class CsvWriter extends ResultWriter {
+    constructor() {
+        super();
+
+        this.writer = csv.createCsvStreamWriter(process.stdout);
+    }
+
+    startSet() {
+        super.startSet();
+
+        if (!this.firstSet) {
+            this.log();
+        }
+        this.firstRow = true;
+    }
+
+    writeRows(result) {
+        result = result || [];
+        result.forEach((item, i) =&gt; {
+            // if it is first row then write column names
+            if (this.firstRow) {
+                this.writer.writeRecord(_.keys(item));
+                this.firstRow = false;
+            }
+
+            this.formatItem(item);
+
+            this.writer.writeRecord(_.values(item));
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sql-cli.resultwriter.JsonWriter" id="apidoc.element.sql-cli.resultwriter.JsonWriter">
+        function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>JsonWriter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class JsonWriter extends ResultWriter {
+    constructor() {
+        super();
+    }
+
+    startResult() {
+        super.startResult();
+
+        this.log('[');
+    }
+
+    startSet() {
+        super.startSet();
+
+        if (this.firstSet) {
+            this.log('[');
+        }
+        else {
+            this.log(',[');
+        }
+
+        this.firstRow = true;
+    }
+
+    writeRows(result) {
+        var prefix = this.firstRow ? '' : ',';
+        this.log(prefix + JSON.stringify(result || [], null, 4));
+    }
+
+    endSet() {
+        super.endSet();
+
+        this.log(']');
+    }
+
+    endResult() {
+        super.endResult();
+
+        this.log(']');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sql-cli.resultwriter.TableWriter" id="apidoc.element.sql-cli.resultwriter.TableWriter">
+        function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>TableWriter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class TableWriter extends ResultWriter {
+    constructor() {
+        super();
+
+        // avoid printing extra blank line after result
+        this.appendsLineToResult = true;
+
+        // can afford extra information between resultsets
+        this.freeFormat = true;
+    }
+
+    startSet() {
+        super.startSet();
+
+        if (!this.firstSet) {
+            this.log();
+        }
+    }
+
+    writeRows(result) {
+        result.forEach(this.formatItem.bind(this));
+        this.log(Table.print(result));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sql-cli.resultwriter.XmlWriter" id="apidoc.element.sql-cli.resultwriter.XmlWriter">
+        function <span class="apidocSignatureSpan">sql-cli.resultwriter.</span>XmlWriter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class XmlWriter extends ResultWriter {
+    constructor() {
+        super();
+    }
+
+    startResult() {
+        super.startResult();
+
+        this.log('&lt;?xml version="1.0"?&gt;');
+        this.log('&lt;results&gt;');
+    }
+
+    startSet() {
+        super.startSet();
+
+        this.log('   &lt;result&gt;');
+    }
+
+    writeRows(result) {
+        result = result || [];
+        result.forEach(item =&gt; {
+            this.formatItem(item);
+
+            this.log('       &lt;row&gt;');
+            Object.keys(item)
+                .forEach(key =&gt; {
+                    var value = this._escape(item[key]);
+                    key = this._escape(key);
+                    this.log(sprintf('         &lt;%s&gt;%s&lt;/%1$s&gt;', key, value));
+                });
+            this.log('       &lt;/row&gt;');
+        });
+    }
+
+    endSet() {
+        super.endSet();
+
+        this.log('   &lt;/result&gt;');
+    }
+
+    endResult() {
+        super.endResult();
+
+        this.log('&lt;/results&gt;');
+    }
+
+    _escape(text) {
+        if (typeof text !== 'string') {
+            return text;
+        }
+
+        return text.replace('"', '&amp;quot;')
+            .replace("'", '&amp;apos;')
+            .replace('&lt;', '&amp;lt;')
+            .replace('&gt;', '&amp;gt;')
+            .replace('&amp;', '&amp;amp;');
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
